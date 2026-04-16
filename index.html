@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Android Developer Portfolio</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #6366f1, #06b6d4);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      border-bottom: 2px solid #6366f1;
+      padding-bottom: 10px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      background: #334155;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #6366f1;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #020617;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Your Name</h1>
+  <p>Android Developer | Flutter | Kotlin | Firebase</p>
+</header>
+
+<section>
+  <h2>About Me</h2>
+  <p>
+    I am an Android developer specializing in building modern apps using Flutter and Kotlin.
+    Passionate about clean UI, scalable architecture, and real-world problem solving.
+  </p>
+</section>
+
+<section>
+  <h2>Projects</h2>
+
+  <div class="projects">
+
+    <div class="card">
+      <h3>GenAI Quiz App</h3>
+      <p>AI-powered app that generates CBSE objective questions by chapter.</p>
+      <a href="https://github.com/yourusername/project1" class="btn">View Code</a>
+    </div>
+
+    <div class="card">
+      <h3>Loan App UI</h3>
+      <p>Advanced Flutter UI with Cubit state management and API integration.</p>
+      <a href="https://github.com/yourusername/project2" class="btn">View Code</a>
+    </div>
+
+    <div class="card">
+      <h3>Document Upload System</h3>
+      <p>Secure file upload system with validation and backend API.</p>
+      <a href="https://github.com/yourusername/project3" class="btn">View Code</a>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <p>Flutter • Dart • Kotlin • Firebase • REST APIs • Bloc/Cubit • UI/UX</p>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>Email: your@email.com</p>
+  <p>
+    <a href="https://github.com/yourusername" class="btn">GitHub</a>
+  </p>
+</section>
+
+<footer>
+  <p>© 2026 Your Name</p>
+</footer>
+
+</body>
+</html>
