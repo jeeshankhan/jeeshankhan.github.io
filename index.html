@@ -1,138 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Android Developer Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jeeshan Khan – Android Developer</title>
+<meta name="description" content="Android developer in New Delhi with 4+ years of experience. Built 10+ lending and telehealth apps in Kotlin and Jetpack Compose.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2F5F1; --card:#FFFFFF; --ink:#10211F; --muted:#51635F; --line:#D3DCD5;
+  --green:#0B6B4F; --green-d:#084D39; --mint:#DDEFE6; --amber:#F2B134;
+  --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --body:'Instrument Sans','Segoe UI',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0}
+h2{font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:800;letter-spacing:-.02em}
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #0f172a;
-      color: white;
-    }
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font:800 1.15rem var(--display);text-decoration:none}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-weight:500;font-size:.97rem}
+nav ul a{text-decoration:none;color:var(--muted)}
+nav ul a:hover{color:var(--green)}
 
-    header {
-      text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #6366f1, #06b6d4);
-    }
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:40px 0 90px}
+.hero h1{font-size:clamp(3rem,8vw,5.6rem);font-weight:800;letter-spacing:-.035em}
+.role{font:600 1.35rem var(--display);color:var(--green);margin:18px 0 20px}
+.hero p{max-width:34em;color:var(--muted);margin:0 0 28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:600;text-decoration:none;font-size:.98rem;border:2px solid var(--ink);transition:background .2s,color .2s}
+.btn.primary{background:var(--ink);color:#fff}
+.btn.primary:hover{background:var(--green);border-color:var(--green)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
 
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
-    }
+/* phone */
+.phone{width:290px;margin:0 auto;background:var(--ink);border-radius:42px;padding:12px;box-shadow:0 30px 60px -25px rgba(16,33,31,.55);transform:rotate(2.5deg)}
+.screen{background:var(--paper);border-radius:32px;padding:26px 20px 22px;min-height:470px}
+.notch{width:70px;height:7px;border-radius:9px;background:var(--line);margin:-12px auto 18px}
+.screen h3{font-size:1.05rem;font-weight:600;color:var(--muted)}
+.amt{font:800 2.5rem var(--display);letter-spacing:-.02em;margin:4px 0 2px}
+.lbl{font-size:.85rem;color:var(--muted);margin-top:16px;display:flex;justify-content:space-between}
+input[type=range]{width:100%;accent-color:var(--green);margin:6px 0 0}
+.chips{display:flex;gap:8px;margin-top:8px}
+.chip{flex:1;padding:8px 0;border-radius:10px;border:1.5px solid var(--line);background:#fff;font:600 .9rem var(--body);cursor:pointer;color:var(--ink)}
+.chip[aria-pressed=true]{background:var(--green);border-color:var(--green);color:#fff}
+.result{margin-top:20px;background:var(--mint);border-radius:18px;padding:16px}
+.result b{display:block;font:800 1.7rem var(--display);color:var(--green-d)}
+.result small{color:var(--muted);font-size:.82rem}
+.cap{text-align:center;color:var(--muted);font-size:.85rem;margin:26px 0 0}
 
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
+section{padding:80px 0;border-top:1px solid var(--line)}
+.lead{color:var(--muted);max-width:38em;margin:12px 0 40px}
 
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+/* apps */
+.app{display:grid;grid-template-columns:1.1fr 1.5fr auto;gap:28px;align-items:start;padding:30px 0;border-bottom:1px solid var(--line)}
+.app:first-of-type{border-top:1px solid var(--line)}
+.app h3{font-size:1.6rem;font-weight:800;letter-spacing:-.015em}
+.tag{display:inline-block;margin-top:8px;font-size:.85rem;font-weight:600;background:var(--mint);color:var(--green-d);padding:3px 12px;border-radius:999px}
+.app p{margin:0;color:var(--muted)}
+.app ul{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.app li{font-size:.82rem;border:1px solid var(--line);background:var(--card);border-radius:6px;padding:2px 9px}
+.get{display:flex;flex-direction:column;gap:6px;align-items:flex-end;min-width:150px}
+.play{background:var(--ink);color:#fff;text-decoration:none;padding:11px 18px;border-radius:12px;font-weight:600;font-size:.95rem;white-space:nowrap;transition:background .2s}
+.play:hover{background:var(--green)}
+.get span{font-size:.82rem;color:var(--muted)}
 
-    h2 {
-      border-bottom: 2px solid #6366f1;
-      padding-bottom: 10px;
-    }
+/* experience */
+.jobs{border-left:3px solid var(--green);margin-left:6px;padding-left:34px}
+.job{position:relative;margin-bottom:46px}
+.job::before{content:"";position:absolute;left:-44px;top:8px;width:15px;height:15px;border-radius:50%;background:var(--amber);border:3px solid var(--paper);box-shadow:0 0 0 2px var(--green)}
+.job h3{font-size:1.4rem;font-weight:800}
+.when{color:var(--green);font-weight:600;margin:2px 0 12px}
+.job ul{margin:0;padding-left:20px;color:var(--muted)}
+.job li{margin-bottom:6px}
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:34px}
+.skills h3{font-size:1.1rem;font-weight:800;margin-bottom:12px}
+.skills p{margin:0;display:flex;flex-wrap:wrap;gap:8px}
+.skills span{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:4px 12px;font-size:.93rem;font-weight:500}
 
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 12px;
-      transition: 0.3s;
-    }
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.edu div{padding:14px 0;border-bottom:1px solid var(--line)}
+.edu b{display:block;font-weight:600}
+.edu span{color:var(--muted);font-size:.95rem}
+.two ul{padding-left:20px;margin:18px 0 0;color:var(--muted)}
+.two li{margin-bottom:10px}
+.two li b{color:var(--ink);font-weight:600}
 
-    .card:hover {
-      transform: translateY(-10px);
-      background: #334155;
-    }
+.contact{background:var(--ink);color:#fff;border:0;border-radius:36px;margin:40px 0 0;padding:70px 48px}
+.contact h2{color:#fff}
+.contact p{color:#B7C7C2;max-width:34em;margin:14px 0 28px}
+.contact .btn{border-color:#fff;color:#fff}
+.contact .btn.primary{background:var(--amber);border-color:var(--amber);color:var(--ink)}
+.contact .btn.primary:hover{background:#fff;border-color:#fff}
+.contact .btn.ghost:hover{background:#fff;color:var(--ink)}
+footer{padding:30px 0 40px;color:var(--muted);font-size:.9rem}
 
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 15px;
-      background: #6366f1;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #020617;
-    }
-  </style>
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;padding-bottom:60px}
+  .app{grid-template-columns:1fr;gap:14px}
+  .get{align-items:flex-start}
+  .two{grid-template-columns:1fr;gap:40px}
+  nav ul{gap:16px;font-size:.88rem}
+  .contact{padding:48px 26px;border-radius:26px}
+}
+@media (max-width:520px){nav ul li:nth-child(n+4){display:none}}
+</style>
 </head>
-
 <body>
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="logo" href="#top">Jeeshan Khan</a>
+    <ul>
+      <li><a href="#apps">Apps</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<header>
-  <h1>Your Name</h1>
-  <p>Android Developer | Flutter | Kotlin | Firebase</p>
-</header>
-
-<section>
-  <h2>About Me</h2>
-  <p>
-    I am an Android developer specializing in building modern apps using Flutter and Kotlin.
-    Passionate about clean UI, scalable architecture, and real-world problem solving.
-  </p>
-</section>
-
-<section>
-  <h2>Projects</h2>
-
-  <div class="projects">
-
-    <div class="card">
-      <h3>GenAI Quiz App</h3>
-      <p>AI-powered app that generates CBSE objective questions by chapter.</p>
-      <a href="https://github.com/yourusername/project1" class="btn">View Code</a>
+  <header class="hero" id="top">
+    <div>
+      <h1>Jeeshan Khan</h1>
+      <div class="role">Android developer, New Delhi</div>
+      <p>I have 4+ years of experience building production Android apps and have launched 10+ from scratch in lending and telehealth. I write Kotlin with Jetpack Compose, MVVM and Clean Architecture, and I care about fast, stable apps that are easy to use.</p>
+      <div class="btns">
+        <a class="btn primary" href="#apps">See my apps</a>
+        <a class="btn ghost" href="mailto:zeeshancrb@gmail.com">Email me</a>
+      </div>
     </div>
 
-    <div class="card">
-      <h3>Loan App UI</h3>
-      <p>Advanced Flutter UI with Cubit state management and API integration.</p>
-      <a href="https://github.com/yourusername/project2" class="btn">View Code</a>
+    <div>
+      <div class="phone" role="group" aria-label="Sample EMI calculator screen">
+        <div class="screen">
+          <div class="notch"></div>
+          <h3>Loan amount</h3>
+          <div class="amt" id="amt">₹50,000</div>
+          <input type="range" id="amount" min="5000" max="100000" step="1000" value="50000" aria-label="Loan amount">
+          <div class="lbl"><span>Tenure (months)</span></div>
+          <div class="chips" id="chips">
+            <button class="chip" data-m="3" aria-pressed="false">3</button>
+            <button class="chip" data-m="6" aria-pressed="false">6</button>
+            <button class="chip" data-m="9" aria-pressed="false">9</button>
+            <button class="chip" data-m="12" aria-pressed="true">12</button>
+          </div>
+          <div class="result">
+            <small>Monthly EMI</small>
+            <b id="emi">₹4,998</b>
+            <small id="int">Total interest ₹9,978</small>
+          </div>
+        </div>
+      </div>
+      <p class="cap">A sample of the screens I build. Drag the slider.</p>
     </div>
+  </header>
+</div>
 
-    <div class="card">
-      <h3>Document Upload System</h3>
-      <p>Secure file upload system with validation and backend API.</p>
-      <a href="https://github.com/yourusername/project3" class="btn">View Code</a>
-    </div>
+<main>
+<section id="apps">
+  <div class="wrap">
+    <h2>Apps I've built</h2>
+    <p class="lead">Live apps I worked on from the first commit. Tap a button to open the app on Google Play.</p>
 
+    <article class="app">
+      <div><h3>Health Assist</h3><span class="tag">Telehealth</span></div>
+      <div>
+        <p>Doctor–patient video consultations with pharmacy and diagnostic services in one app. I led it end to end: system design, features, backend integration, testing and release.</p>
+        <ul><li>Kotlin</li><li>Agora Video</li><li>REST APIs</li><li>MVVM</li></ul>
+      </div>
+      <div class="get">
+        <!-- Add your Health Assist Play Store link here:
+        <a class="play" href="PASTE_LINK" target="_blank" rel="noopener">Open on Google Play</a> -->
+      </div>
+    </article>
+
+    <article class="app">
+      <div><h3>Rupee112</h3><span class="tag">Lending</span></div>
+      <div>
+        <p>A personal loan app I built from scratch and keep improving: new modules, Firebase fixes and a smoother borrower experience.</p>
+        <ul><li>Kotlin</li><li>Firebase</li><li>Clean Architecture</li></ul>
+      </div>
+      <div class="get">
+        <a class="play" href="https://play.google.com/store/apps/details?id=com.vrindafinlease.rupee112" target="_blank" rel="noopener">Open on Google Play</a>
+        <span>50L+ downloads</span>
+      </div>
+    </article>
+
+    <article class="app">
+      <div><h3>Bharat Loan</h3><span class="tag">Lending</span></div>
+      <div>
+        <p>A production loan app with eKYC verification, payment processing and digital document management. Firebase handles monitoring and performance.</p>
+        <ul><li>eKYC</li><li>Payments</li><li>Firebase</li><li>Hilt</li></ul>
+      </div>
+      <div class="get">
+        <a class="play" href="https://play.google.com/store/apps/details?id=com.devmunifin.bharatloan" target="_blank" rel="noopener">Open on Google Play</a>
+        <span>5M+ downloads</span>
+      </div>
+    </article>
+
+    <article class="app">
+      <div><h3>Loan112</h3><span class="tag">Lending</span></div>
+      <div>
+        <p>Built and launched from scratch with secure financial features, a scalable architecture and full Firebase integration: auth, notifications, analytics and crash reporting.</p>
+        <ul><li>Kotlin</li><li>Firebase</li><li>Retrofit</li><li>Room</li></ul>
+      </div>
+      <div class="get">
+        <a class="play" href="https://play.google.com/store/apps/details?id=com.personalLoan.loan112" target="_blank" rel="noopener">Open on Google Play</a>
+        <span>10L+ downloads</span>
+      </div>
+    </article>
   </div>
 </section>
 
-<section>
-  <h2>Skills</h2>
-  <p>Flutter • Dart • Kotlin • Firebase • REST APIs • Bloc/Cubit • UI/UX</p>
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <p class="lead">Two companies, ten apps, and a steady move toward cleaner architecture.</p>
+    <div class="jobs">
+      <div class="job">
+        <h3>Android Developer, Rupee112</h3>
+        <div class="when">Gurgaon · August 2023 to present</div>
+        <ul>
+          <li>Built 4 NBFC-focused Android apps from scratch, covering the full product lifecycle.</li>
+          <li>Set up a scalable codebase with MVVM and Clean Architecture.</li>
+          <li>Integrated eKYC, payment processing, Firebase (auth, analytics, crash reporting) and digital document management.</li>
+          <li>Fixed critical bugs and improved performance through systematic code analysis.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>Android Developer, Innobles</h3>
+        <div class="when">Delhi · February 2021 to July 2023</div>
+        <ul>
+          <li>Built 6 Android apps from scratch, including the flagship Health Assist telehealth platform.</li>
+          <li>Designed secure doctor–patient video consultations with the Agora SDK.</li>
+          <li>Integrated pharmacy and diagnostic services, backend APIs and real-time data flows.</li>
+          <li>Shipped new features for existing apps to match the latest Android specifications.</li>
+          <li>Proposed workflow improvements that raised team productivity.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section>
-  <h2>Contact</h2>
-  <p>Email: your@email.com</p>
-  <p>
-    <a href="https://github.com/yourusername" class="btn">GitHub</a>
-  </p>
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <p class="lead">The tools I reach for every day.</p>
+    <div class="skills">
+      <div><h3>Language and UI</h3><p><span>Kotlin</span><span>Java</span><span>Jetpack Compose</span><span>XML</span><span>Material Design</span></p></div>
+      <div><h3>Architecture</h3><p><span>MVVM</span><span>Clean Architecture</span><span>Coroutines</span><span>Dagger / Hilt</span></p></div>
+      <div><h3>Data and networking</h3><p><span>Retrofit</span><span>Room DB</span><span>RESTful APIs</span><span>Firebase</span></p></div>
+      <div><h3>Integrations</h3><p><span>Google Maps</span><span>Agora Video</span><span>Razorpay</span><span>Appsflyer</span><span>Adjust</span></p></div>
+      <div><h3>Tools</h3><p><span>Android SDK</span><span>Android Studio</span><span>Git / GitHub</span></p></div>
+    </div>
+  </div>
 </section>
 
-<footer>
-  <p>© 2026 Your Name</p>
-</footer>
+<section id="education">
+  <div class="wrap two">
+    <div class="edu">
+      <h2>Education</h2>
+      <div style="margin-top:22px"><b>MCA, Master of Computer Applications</b><span>Aligarh Muslim University · 2018</span></div>
+      <div><b>B.Sc. (Hons.) Computer Applications</b><span>Aligarh Muslim University · 2015</span></div>
+      <div><b>Senior Secondary (12th)</b><span>Zakir Hussain Sr. Sec. School · 2010</span></div>
+    </div>
+    <div>
+      <h2>Certifications and more</h2>
+      <ul>
+        <li><b>UGC NET</b> qualified in Computer Science.</li>
+        <li><b>Machine Learning</b> by Andrew Ng, Stanford University on Coursera.</li>
+        <li><b>Mobile Robotics</b> certificate from Aligarh Muslim University, certified by SKYfi Lab.</li>
+        <li><b>Inter-Hostel Table Tennis</b> champion, singles and doubles.</li>
+        <li><b>Languages:</b> Hindi and English.</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
+<div class="wrap">
+  <section class="contact" id="contact">
+    <h2>Let's build your next app</h2>
+    <p>I'm open to Android roles and projects. Send me a note and I'll reply soon.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:zeeshancrb@gmail.com">zeeshancrb@gmail.com</a>
+      <a class="btn ghost" href="tel:+919761611918">+91 97616 11918</a>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer><div class="wrap">© 2026 Jeeshan Khan · New Delhi, India</div></footer>
+
+<script>
+(function(){
+  var amount=document.getElementById('amount'),amt=document.getElementById('amt'),
+      emi=document.getElementById('emi'),intr=document.getElementById('int'),
+      chips=document.querySelectorAll('.chip'),months=12,APR=0.35;
+  function inr(n){return '₹'+Math.round(n).toLocaleString('en-IN');}
+  function calc(){
+    var p=+amount.value,r=APR/12,f=Math.pow(1+r,months),e=p*r*f/(f-1);
+    amt.textContent=inr(p);emi.textContent=inr(e);
+    intr.textContent='Total interest '+inr(e*months-p);
+  }
+  amount.addEventListener('input',calc);
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    chips.forEach(function(x){x.setAttribute('aria-pressed','false')});
+    c.setAttribute('aria-pressed','true');months=+c.dataset.m;calc();
+  });});
+  calc();
+})();
+</script>
 </body>
 </html>
